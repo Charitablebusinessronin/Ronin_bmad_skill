@@ -1,0 +1,23 @@
+{
+  "repository_type": "monolith",
+  "parts": [
+    {
+      "part_id": "root",
+      "name": "root",
+      "root_path": "/home/the-dojo-2077/agent-zero-data/workdir/dev/projects/bmad",
+      "project_type_id": "cli",
+      "detected_markers": [
+        "bmad_cli.py",
+        "README.md",
+        "_bmad/",
+        ".agent/workflows/"
+      ],
+      "primary_stack": [
+        "python",
+        "markdown",
+        "yaml"
+      ]
+    }
+  ],
+  "integration_points": []
+}

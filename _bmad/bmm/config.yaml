@@ -9,8 +9,50 @@ planning_artifacts: "{project-root}/_bmad-output/planning-artifacts"
 implementation_artifacts: "{project-root}/_bmad-output/implementation-artifacts"
 project_knowledge: "{project-root}/docs"
 
+# External Knowledge Sources
+notion_hub_url: "https://www.notion.so/3101d9be65b3801c9f9cfaa609ec7237?v=3101d9be65b3803e8563000caf757722&source=copy_link"
+notion_workspace_context:
+  teamspace: "Ronin Notion Hub"
+  expected_artifacts:
+    - "Personal Assistant PRD"
+    - "PO Validation Checklist"
+    - "Architecture"
+notion_artifact_registry:
+  hub_page_id: "2661d9be-65b3-81df-8977-e88482d03583"
+  personal_assistant_prd_candidate:
+    page_id: "2faa9a57-4b7b-4813-9a07-56eace9c8a08"
+    title: "Alfred — Personal Executive Butler (Brooksian)"
+  po_validation_checklist:
+    page_id: "2ac1d9be-65b3-815f-83a7-d523022a63dd"
+    title: "po-master-checklist"
+  architecture_workflow:
+    page_id: "2a11d9be-65b3-8107-b216-ded08d76732d"
+    title: "architecture"
+
 # Core Configuration Values
 user_name: Ronin
 communication_language: english
 document_output_language: english chill relaxed
 output_folder: "{project-root}/_bmad-output"
+
+# Agent Prompt Database Sync (Neo4j)
+agent_prompt_database: neo4j
+agent_prompt_database_synced_at: "2026-02-27T16:16:38Z"
+active_agent_registry:
+  core:
+    - BMad Master — Sarah Boone
+    - BMad Master
+    - Alfred
+  bmm:
+    - James Acosta - Product Manager
+    - Jay – Analyst Agent
+    - Winston - Architect
+    - Full Stack Developer (Brooks)
+    - bob o - Scrum Master
+  cis:
+    - Allura - UX Designer
+    - Dr. Quinn - Problem Solver
+  tea:
+    - Troy — Master Test Architect
+  bmb:
+    - Mike Drum — Quick Flow Solo Dev

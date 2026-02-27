@@ -140,22 +140,76 @@ curl http://localhost:8811/mcp
 
 ---
 
+## 🛠 BMAD CLI Utility
+
+The repository ships with a lightweight Python script (`bmad_cli.py`) that exposes basic project automation (help/version plus a friendly greeter). It has no external dependencies — just run it with `python3`.
+
+### Available Commands
+
+```bash
+python3 bmad_cli.py --help
+```
+
+```
+usage: bmad-cli [-h] [--version] <command> ...
+
+A minimal BMAD helper CLI with a friendly greeter.
+
+positional arguments:
+  <command>
+    greet     Greet someone by name with a friendly message.
+
+options:
+  -h, --help  show this help message and exit
+  --version   Display version information and exit.
+```
+
+- `--version` prints the CLI version:
+
+  ```bash
+  python3 bmad_cli.py --version
+  # bmad-cli 0.1.0
+  ```
+
+- `greet <name>` outputs a welcome message and enforces friendly validation rules (letters, spaces, single hyphens/apostrophes, ≤50 chars, no trailing punctuation):
+
+  ```bash
+  python3 bmad_cli.py greet Ronin
+  # Hello, Ronin! Welcome to the BMAD CLI.
+
+  python3 bmad_cli.py greet "Mary  Ann"
+  # Error: Name cannot contain consecutive spaces.
+  ```
+
+### Run the Tests
+
+Execute the Python unit tests after modifying the CLI to keep validation logic reliable:
+
+```bash
+python3 -m unittest
+```
+
+The suite covers success paths, trimming, and every validation error case shown above.
+
+---
+
 ## 🎭 Meet the Agents
 
 BMAD operates through specialized AI agents, each with a unique persona and expertise:
 
-| Module | Agent | Role | Trigger Command |
-|--------|-------|------|-----------------|
-| **Core** | **Sarah Boone** | Master Orchestrator | `/bmad-agent-bmad-master` |
-| BMM | Jay | Product Manager | `/bmad-bmm-create-product-brief` |
-| BMM | Alan | Systems Analyst | `/bmad-bmm-create-prd` |
-| BMM | Fred | Solution Architect | `/bmad-bmm-create-architecture` |
-| BMM | Linus | Developer | `/bmad-bmm-dev-story` |
-| BMM | Barbara | QA Engineer | `/bmad-bmm-code-review` |
-| BMM | Don | UX Designer | `/bmad-bmm-create-ux` |
-| BMB | Agent Smith | Agent Builder | `/bmad-bmb-create-agent` |
-| CIS | Mike Power | Copywriting | `/bmad-cis-copywriting` |
-| TEA | Troy | Test Architect | `/bmad-tea-testarch-framework` |
+| Module | Agent | Role | Icon | Trigger Command |
+|--------|-------|------|------|-----------------|
+| **Core** | **BMad Master — Sarah Boone** | BMAD Master Orchestrator | 🧙 | `/bmad-agent-bmad-master` |
+| BMM | Jay – Analyst Agent | Analyst Agent | 🔍 | `/bmad-bmm-analyze` |
+| BMM | James Acosta - Product Manager | Product Manager | 📋 | `/bmad-bmm-create-product-brief` |
+| BMM | Winston - Architect | Solution Architect | 🏗️ | `/bmad-bmm-create-architecture` |
+| BMM | Full Stack Developer (Brooks) | Full Stack Developer | 💻 | `/bmad-bmm-fullstack-dev` |
+| BMM | bob o - Scrum Master | Scrum Master | 🏃 | `/bmad-bmm-sprint-planning` |
+| TEA | Troy — Master Test Architect | Master Test Architect | 🧪 | `/bmad-bmm-code-review` |
+| CIS | Allura - UX Designer | UX Designer | 🎨 | `/bmad-cis-create-ux` |
+| CIS | Dr. Quinn - Problem Solver | Problem Solver | 🔬 | `/bmad-cis-problem-solve` |
+| BMB | Mike Drum — Quick Flow Solo Dev | Quick Flow Solo Dev | 🚀 | `/bmad-bmb-quick-flow` |
+| **Core** | **Alfred** | Notion Orchestrator | 🎩 | `/bmad-alfred-orchestrate` |
 
 **Legendary Anchors:** Each agent is inspired by a computing legend and embodies their principles.
 
@@ -175,8 +229,8 @@ BMAD operates through specialized AI agents, each with a unique persona and expe
 ```
 # Planning
 /bmad-bmm-create-product-brief    # Create product brief with Jay
-/bmad-bmm-create-prd             # Create PRD with Alan
-/bmad-bmm-create-architecture    # Design architecture with Fred
+/bmad-bmm-create-prd             # Create PRD with John
+/bmad-bmm-create-architecture    # Design architecture with Winston
 
 # Development
 /bmad-bmm-create-epics-and-stories   # Generate epics/stories
@@ -186,7 +240,7 @@ BMAD operates through specialized AI agents, each with a unique persona and expe
 # Management
 /bmad-bmm-sprint-planning        # Sprint planning session
 /bmad-bmm-sprint-status          # Check sprint status
-/bmad-bmm-code-review            # Code review with Barbara
+/bmad-bmm-code-review            # Code review with Troy
 ```
 
 ### BMB Builder (Agent/Module Creation)
@@ -301,6 +355,19 @@ overrides:
   }
 }
 ```
+
+---
+
+## 🗂 Notion Hub Artifacts
+
+BMAD planning inputs can be sourced from Ronin's Notion Hub.
+
+- Hub: `2661d9be-65b3-81df-8977-e88482d03583` (`🏛️ Ronin's Notion Hub - Master Directory & Command Center`)
+- Personal assistant PRD candidate: `2faa9a57-4b7b-4813-9a07-56eace9c8a08` (`Alfred — Personal Executive Butler (Brooksian)`)
+- PO validation checklist: `2ac1d9be-65b3-815f-83a7-d523022a63dd` (`po-master-checklist`)
+- Architecture workflow doc: `2a11d9be-65b3-8107-b216-ded08d76732d` (`architecture`)
+
+These IDs are mirrored in `_bmad/bmm/config.yaml` under `notion_artifact_registry`.
 
 ---
 
@@ -465,13 +532,16 @@ MIT License — see [LICENSE](LICENSE) file
 
 BMAD agents are inspired by computing legends:
 
-- **Sarah Boone** → Clarence Ellis (Groupware, CSCW)
-- **Jay** → Jeff Sutherland (Scrum)
-- **Alan** → Alan Turing (Computer Science)
-- **Fred** → Fred Brooks (Software Engineering)
-- **Linus** → Linus Torvalds (Linux)
-- **Barbara** → Barbara Liskov (Programming)
-- **Don** → Don Norman (UX Design)
+- **BMad Master — Sarah Boone** → Clarence Ellis (Groupware, CSCW)
+- **James Acosta - Product Manager** → Jeff Sutherland (Scrum)
+- **Jay – Analyst Agent** → Gerald Weinberg (People Whisperer)
+- **Winston - Architect** → Barbara Liskov (LSP)
+- **Full Stack Developer (Brooks)** → Fred Brooks (The Mythical Man-Month)
+- **Troy — Master Test Architect** → Edsger Dijkstra (Formal Verification)
+- **Allura - UX Designer** → Don Norman (Design of Everyday Things)
+- **bob o - Scrum Master** → Kent Beck (XP)
+- **Dr. Quinn - Problem Solver** → Richard Feynman (First Principles)
+- **Mike Drum — Quick Flow Solo Dev** → John Carmack (Rapid Prototyping)
 
 ---
 
