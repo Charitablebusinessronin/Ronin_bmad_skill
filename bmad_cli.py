@@ -11,6 +11,13 @@ from typing import Iterable
 __version__ = "0.1.0"
 
 NAME_PATTERN = re.compile(r"^[A-Za-z][A-Za-z\s\-']*$")
+MAX_NAME_LENGTH = 50
+INVALID_CHAR_MESSAGE = "Name must contain only letters, spaces, hyphens, or apostrophes."
+REPEATED_SEPARATORS = {
+    "  ": "consecutive spaces",
+    "--": "consecutive hyphens",
+    "''": "consecutive apostrophes",
+}
 
 
 class CLIError(Exception):
@@ -46,10 +53,17 @@ def validate_name(name: str) -> str:
     cleaned = name.strip()
     if not cleaned:
         raise CLIError("Name cannot be empty.")
-    if len(cleaned) > 50:
-        raise CLIError("Name must be 50 characters or fewer.")
+    if len(cleaned) > MAX_NAME_LENGTH:
+        raise CLIError(f"Name must be {MAX_NAME_LENGTH} characters or fewer.")
+    if any(char.isdigit() for char in cleaned):
+        raise CLIError("Name cannot contain numbers.")
+    for sequence, description in REPEATED_SEPARATORS.items():
+        if sequence in cleaned:
+            raise CLIError(f"Name cannot contain {description}.")
+    if cleaned[-1] in {"-", "'"}:
+        raise CLIError("Name cannot end with punctuation.")
     if not NAME_PATTERN.fullmatch(cleaned):
-        raise CLIError("Name must contain only letters, spaces, hyphens, or apostrophes.")
+        raise CLIError(INVALID_CHAR_MESSAGE)
     return cleaned
 
 
