@@ -9,3 +9,21 @@ user_name: Ronin
 communication_language: english
 document_output_language: english chill relaxed
 output_folder: "{project-root}/_bmad-output"
+
+# Agent Memory Sidecars
+sidecars:
+  sarah-boone:
+    path: "{project-root}/_bmad/_memory/sarah-boone-sidecar"
+    files:
+      - identity.md
+      - collaboration-memory.md
+      - learned-patterns.md
+    neo4j_enabled: true
+    neo4j_node: "Sarah Boone"
+    neo4j_group_id: "bmad-core"
+
+# Neo4j Connection (loaded from .env)
+neo4j:
+  uri: "neo4j+s://e3953f5b.databases.neo4j.io"
+  user_env: "NEO4J_USER"
+  password_env: "NEO4J_ADMIN"

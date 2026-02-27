@@ -1,0 +1,13 @@
+{
+  "active": true,
+  "iteration": 1,
+  "minIterations": 1,
+  "maxIterations": 10,
+  "completionPromise": "COMPLETE",
+  "tasksMode": true,
+  "taskPromise": "READY_FOR_NEXT_TASK",
+  "prompt": "Create a CLI tool with:\n1) --help and --version\n2) one real command (greet <name>)\n3) input validation + clear errors\n4) tests\n5) README usage examples\n\nRun tests each iteration.\nOutput <promise>COMPLETE</promise> only when tests pass.",
+  "startedAt": "2026-02-27T13:02:03.705Z",
+  "model": "gpt-5-codex",
+  "agent": "codex"
+}
