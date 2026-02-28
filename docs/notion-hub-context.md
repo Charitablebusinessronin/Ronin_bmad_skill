@@ -13,6 +13,8 @@ Primary external planning source: Ronin Notion Hub teamspace.
 - Treat this hub as the source of truth for planning inputs.
 - Mirror finalized docs into `_bmad-output/planning-artifacts/` when needed for BMAD workflows that require local files.
 - Keep naming aligned with BMAD workflow prerequisites (e.g., `prd.md`, `architecture.md`).
+- Execute Neo4j knowledge graph bootstrap and ingestion locally through MCP Docker + Neo4j.
+- Keep Notion as upstream planning context; do not require Notion writes to run local graph setup.
 
 ## Integration status
 

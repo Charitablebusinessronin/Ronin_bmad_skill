@@ -85,6 +85,7 @@ Edit `.env`:
 ```env
 # Neo4j (Memory Graph)
 NEO4J_USER=neo4j
+NEO4J_ADMIN=your_secure_password
 NEO4J_PASSWORD=your_secure_password
 
 # Notion (Document Storage)
@@ -124,6 +125,9 @@ docker run -d \
   -e NOTION_TOKEN=your_notion_token \
   docker/mcp-gateway
 ```
+
+Note: BMAD memory config uses `NEO4J_ADMIN` as the canonical secret key (`_bmad/_memory/config.yaml`).
+For compatibility, keep `NEO4J_PASSWORD` and `NEO4J_ADMIN` set to the same value.
 
 ### 5. Verify Setup
 

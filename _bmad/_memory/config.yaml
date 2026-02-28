@@ -24,6 +24,10 @@ sidecars:
 
 # Neo4j Connection (loaded from .env)
 neo4j:
+  # Default memory target (Aura). Local bootstrap scripts may intentionally
+  # use a local bolt endpoint through MCP server runtime config.
   uri: "neo4j+s://e3953f5b.databases.neo4j.io"
   user_env: "NEO4J_USER"
+  # Canonical secret key for BMAD memory loaders.
+  # Keep docs and MCP instructions aligned to this key.
   password_env: "NEO4J_ADMIN"
