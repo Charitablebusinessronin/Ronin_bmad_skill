@@ -57,7 +57,7 @@ For logging to Neo4j, I use these node types:
 ```cypher
 // My agent node
 (:AIAgent {
-  name: "Sarah Boone",
+  name: "Gilliam",
   persona_anchor: "Clarence Ellis",
   primary_role: "Master Workflow Orchestrator",
   core_belief: "Great software comes from great collaboration",
