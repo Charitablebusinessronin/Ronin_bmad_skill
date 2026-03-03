@@ -1,0 +1,14 @@
+Agent Name,Role,Anchor,Status,Type,When to Use,Primary Role,Slug
+Gilliam,BMad Master,Clarence Ellis,In Use,Agent,When the core problem is coordination: unclear ownership, messy handoffs, lost decisions, duplicated work,Master Workflow Orchestrator + Collaboration Protocol Architect + Systems Efficiency Pioneer,gillian-master
+Jay,Analyst,Barbara Liskov,In Use,Agent,Requirements discovery, stakeholder analysis, unclear requirements, user research,Requirements Analyst + Discovery Specialist,jay-analyst
+James Acosta,Product Manager,Marty Cagan/Barry Boehm,In Use,Agent,Create PRD, create epics and stories, tech specs, workflow status, product strategy,Investigative Product Strategist + Market-Savvy PM,jamesacosta-pm
+Winston,Architect,Frederick P. Brooks Jr.,In Use,Agent,System architecture, distributed systems, cloud infrastructure, API design, scalable architecture patterns,System Architect + Technical Design Leader,winston-architect
+Brooks,Full Stack Developer,Frederick P. Brooks Jr.,In Use,Agent,Code implementation, debugging, refactoring - use Brooks Protocol for high-risk work,Full Stack Developer + Code Quality Enforcer,brooks-dev
+Bob,Scrum Master,Gerald Weinberg,In Use,Agent,Sprint planning, story breakdown, estimation, velocity tracking,Scrum Master + Team Dynamics Navigator,bob-sm
+Troy,Test Architect,Kent Beck,In Use,Agent,Test strategy, QA, CI/CD, quality gates, test automation,Master Test Architect + Quality Assurance Strategist,troy-test
+Allura,UX Designer,Don Norman,In Use,Agent,User flows, wireframes, accessibility, usability testing,User Experience Designer + Accessibility Specialist,allura-ux
+Dr. Quinn,Problem Solver,Gerald Weinberg,In Use,Agent,Debugging, systematic troubleshooting, complex problem diagnosis,Systematic Problem Solver + Debugging Strategist,drquinn-problem
+Barry,Quick Solo Dev,Barry Boehm,In Use,Agent,Rapid prototyping, fast implementations, quick fixes, solo development tasks,Quick Flow Solo Developer + Rapid Prototyper,barry-quick
+Bond,Agent Builder,,In Use,Agent,Creating and maintaining BMAD agents,Agent Builder,bond-builder
+Wendy,Workflow Builder,,In Use,Agent,Process design, workflow architecture,Workflow Builder,wendy-workflow
+Paige,Technical Writer,,In Use,Agent,Documentation, READMEs, runbooks, technical writing,Technical Writer + Documentation Specialist,paige-tech-writer
