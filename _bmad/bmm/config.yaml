@@ -40,14 +40,12 @@ agent_prompt_database: neo4j
 agent_prompt_database_synced_at: "2026-02-27T16:16:38Z"
 active_agent_registry:
   core:
-    - BMad Master — Sarah Boone
-    - BMad Master
-    - Alfred
+    - Gilliam
   bmm:
-    - James Acosta - Product Manager
     - Jay – Analyst Agent
+    - James Acosta - Product Manager
     - Winston - Architect
-    - Full Stack Developer (Brooks)
+    - Brooks - Full Stack Developer
     - bob o - Scrum Master
   cis:
     - Allura - UX Designer
@@ -55,4 +53,4 @@ active_agent_registry:
   tea:
     - Troy — Master Test Architect
   bmb:
-    - Mike Drum — Quick Flow Solo Dev
+    - Barry — Quick Flow Solo Dev
